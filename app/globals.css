@@ -1,33 +1,187 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Break words when there is enough space */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  overflow-wrap: break-word;
+}
+
+/* Remove list styles on ul, ol */
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+}
+
+/* A elements get default styles */
+a {
+  appearance: none;
+  color: inherit;
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+}
+
+/* Button elements get default styles */
+button {
+  appearance: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  user-select: none;
+}
+
+/* Inherit fonts for inputs */
+input,
+textarea,
+select {
+  display: block;
+  font: inherit;
+  margin: 0;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
   }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+html,
+body {
+  width: 100%;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #f7f9ed;
+  min-height: 100%;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.scrolled {
+  position: relative;
+  display: flex;
+}
+
+.images {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100vh;
+  background-color: #c4dcd3;
+}
+
+.images .image-block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.images .first-image {
+  opacity: 1;
+}
+
+.images .image-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.texts {
+  position: relative;
+  width: 60%;
+  margin-left: auto;
+}
+
+.texts .text-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 6rem;
+  box-sizing: border-box;
+}
+
+.texts .text-block p {
+  font-size: 1.2rem;
+  font-weight: normal;
+  line-height: 2;
+}
+
+.texts .text-block p + p {
+  margin-top: 2rem;
+}
+
+.other {
+  width: 100%;
+  padding: calc(100vh / 3) max(calc(100vh / 3), 30px);
+  box-sizing: border-box;
+  background-color: #c4dcd3;
+}
+
+.other p {
+  margin: 0;
 }
