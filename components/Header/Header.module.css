@@ -1,0 +1,23 @@
+.header {
+  z-index: 100;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1vw;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 3rem;
+  background: #fff;
+  box-shadow: 0 0 80px rgb(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 800;
+  color: transparent;
+  background: linear-gradient(60deg, #ec0d78, #ff2b40, #f75735, #fe880e);
+  background-clip: text;
+  -webkit-background-clip: text;
+}

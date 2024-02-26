@@ -26,10 +26,6 @@
   opacity: 1;
 }
 
-.firstImage {
-  opacity: 1;
-}
-
 .imageBlock img {
   width: 100%;
   height: 100%;
@@ -50,16 +46,6 @@
   min-height: 100vh;
   padding: 6rem;
   box-sizing: border-box;
-}
-
-.textBlock p {
-  font-size: 1.2rem;
-  font-weight: normal;
-  line-height: 2;
-}
-
-.textBlock p + p {
-  margin-top: 2rem;
 }
 
 .other {
